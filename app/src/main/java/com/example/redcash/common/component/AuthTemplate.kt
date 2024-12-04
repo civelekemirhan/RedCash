@@ -1,13 +1,13 @@
-package com.example.redcash.common
+package com.example.redcash.common.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,17 +43,25 @@ fun AuthTemplate(isSplash: Boolean = false, content: @Composable () -> Unit) {
                 verticalArrangement = Arrangement.Center
             ) {
 
-                Row(modifier=Modifier.fillMaxWidth().wrapContentHeight()){
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.6f)) {
                     content()
                 }
 
-                Row(modifier=Modifier.fillMaxWidth().wrapContentHeight()) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight(0.3f),
+                    verticalAlignment = Alignment.Bottom,
+                    horizontalArrangement = Arrangement.Center
+                ) {
                     Text(
                         "REDCASH",
                         color = Color.White,
-                        fontSize = 25.sp,
+                        fontSize = 35.sp,
                         letterSpacing = 5.sp,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.ExtraBold
                     )
                 }
 

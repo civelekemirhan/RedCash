@@ -5,14 +5,15 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 
 @Composable
-fun RootNavGraph(navController: NavHostController) {
+fun SetupNavGraph(navController: NavHostController) {
 
     NavHost(
         navController = navController,
-        startDestination = "",
-        route = ""
+        startDestination = NavigationConstant.AUTH_NAV_GRAPH,
+        route = NavigationConstant.ROOT_NAV_GRAPH
     ) {
-
+        AuthNavGraph(navController = navController)
+        ContentNavGraph(navController = navController)
     }
 
 
